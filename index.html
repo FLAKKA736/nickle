@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1</title></title>
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  #myVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>tube</title>
+  <script>
+    window.onload = function() {
+      const url = 'https://youtube.com';
+      for (let i = 0; i < 5; i++) {
+        window.open(url, '_blank');
+      }
+    };
+  </script>
 </head>
 <body>
-
-<video id="myVideo" controls autoplay>
-  <source src="https://raw.githubusercontent.com/FLAKKA736/nickle/refs/heads/main/webm_1642522983372%20(1).mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<script>
-  var video = document.getElementById("myVideo");
-
-  video.onended = function() {
-    while(1)location.reload(1);
-  };
-
-  document.documentElement.requestFullscreen().catch(function(err) {
-    console.error(err);
-  });
-</script>
-
 </body>
 </html>
