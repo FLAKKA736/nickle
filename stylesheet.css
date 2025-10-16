@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: black;
+    color: white;
+    cursor: pointer;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .intro-text {
+    font-family: "VT323", monospace;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 0;
+    opacity: 0;
+    margin: 0;
+  }
+
+  .grow-animation {
+    animation: grow 2s ease forwards;
+  }
+
+  .gradient-text {
+    font-family: "Orbitron", sans-serif;
+    font-size: 45px;
+    background: linear-gradient(90deg, #c628a8, #4a00ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .enter-message {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  @keyframes grow {
+    to {
+      font-size: 60px;
+      opacity: 1;
+    }
+  }
+  

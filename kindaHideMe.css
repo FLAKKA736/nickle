@@ -1,0 +1,255 @@
+:root {
+    --bg-color: #121212;
+    --primary-color: #d3d3d3;
+    --secondary-color: #181818;
+    --text-color: #e0e0e0;
+    --muted-text: #ccc;
+    --btn-bg: #242424;
+    --btn-hover: #555555;
+    --accent-green: #28a745;
+  }
+  
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Fira Code', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+    animation: fadeInBody 1s ease forwards;
+  }
+  @keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    animation: slideDown 0.8s ease forwards;
+    flex-wrap: wrap;
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  header .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+  }
+  header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    background: var(--btn-bg);
+    box-shadow: 0 0px 5px rgba(255, 255, 255, 0.4);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+    background: var(--btn-hover);
+  }
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease forwards;
+  }
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted-text);
+  }
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .feature {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.4);
+    flex: 1 1 calc(33.333% - 1rem);
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .feature:nth-child(1) { animation-delay: 0.3s; }
+  .feature:nth-child(2) { animation-delay: 0.5s; }
+  .feature:nth-child(3) { animation-delay: 0.7s; }
+  .feature:nth-child(4) { animation-delay: 0.9s; }
+  .feature:nth-child(5) { animation-delay: 1.1s; }
+  .feature:nth-child(6) { animation-delay: 1.3s; }
+  .feature h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  .feature p {
+    font-size: 1rem;
+    color: var(--muted-text);
+    text-align: center;
+  }
+  .RainbowGrad {
+    background: linear-gradient(90deg, 
+        #ffb3ba,
+        #ffdfba,
+        #ffffba,
+        #baffc9,
+        #bae1ff,
+        #e1baff,
+        #ffb3ba
+    );
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: softRainbowAnimation 8s ease infinite;
+    text-align: center;
+  }
+  .LogoRainbow {
+    background: linear-gradient(90deg, 
+    #FF66B2,
+    #333333,
+    #C0C0C0
+    );
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: legbs 5s ease infinite;
+    text-align: center;
+  }
+  .accent-green {
+    color: var(--accent-green);
+  }
+  .testimonials {
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease forwards;
+  }
+  .testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  input {
+    background: var(--secondary-color);
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-style: italic;
+    color: var(--muted-text);
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+    text-align: center;
+  }
+  .testimonial {
+    background: var(--secondary-color);
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-style: italic;
+    color: var(--muted-text);
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+    text-align: center;
+  }
+  .testimonial:nth-child(2) { animation-delay: 0.5s; }
+  .testimonial:nth-child(3) { animation-delay: 0.7s; }
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    border-top: 1px solid #333;
+    animation: fadeIn 1s ease forwards;
+  }
+  @keyframes softRainbowAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 100% 0%; }
+  }
+  @keyframes legbs {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+  }
+  @media (max-width: 768px) {
+      header {
+          flex-direction: column;
+          align-items: center;
+      }
+      header .logo-container {
+          margin-bottom: 1rem;
+      }
+      header h1 {
+          font-size: 2rem;
+          text-align: center;
+      }
+      .buttons {
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          width: 100%;
+          align-items: center;
+      }
+      .btn {
+          width: 90%;
+          text-align: center;
+      }
+  }
