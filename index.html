@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>6</title>
+  <title>7</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
   <script>
+    const colors = [
+      "#FF0000", // Red
+      "#00FF00", // Green
+      "#0000FF", // Blue
+      "#FFFF00", // Yellow
+      "#FF00FF", // Magenta
+      "#00FFFF", // Cyan
+      "#FFFFFF", // White
+      "#000000"  // Black
+    ];
+
+    let i = 0;
+
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[i];
+      i = (i + 1) % colors.length;
+    }, 25);
     window.onload = function() {
       const url = 'https://flakka736.github.io/nickle';
       const width = 320;
@@ -24,9 +48,9 @@
   </script>
 </head>
 <body>
-  <h1>2</h1>
 </body>
 </html>
+
 
 
 
