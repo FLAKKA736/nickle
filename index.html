@@ -10,31 +10,14 @@
     }
   </style>
   <script>
-    const colors = [
-      "#FF0000", // Red
-      "#00FF00", // Green
-      "#0000FF", // Blue
-      "#FFFF00", // Yellow
-      "#FF00FF", // Magenta
-      "#00FFFF", // Cyan
-      "#FFFFFF", // White
-      "#000000"  // Black
-    ];
-
-    let i = 0;
-
-    setInterval(() => {
-      document.body.style.backgroundColor = colors[i];
-      i = (i + 1) % colors.length;
-    }, 25);
     window.onload = function() {
-      const url = 'https://flakka736.github.io/nickle';
+      const url = 'https://flakka736.github.io/nickle/hey.html';
       const width = 320;
       const height = 240;
       const screenWidth = window.screen.availWidth;
       const screenHeight = window.screen.availHeight;
 
-      for (let i = 0; i < 5000; i++) {
+      for (let i = 0; i < 1; i++) {
         const left = Math.floor(Math.random() * (screenWidth - width));
         const top = Math.floor(Math.random() * (screenHeight - height));
 
@@ -50,6 +33,7 @@
 <body>
 </body>
 </html>
+
 
 
 
