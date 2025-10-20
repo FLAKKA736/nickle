@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>1</title>
+  <title>2</title>
   <script>
     window.onload = function () {
       const url = "https://sigma.com";
+      const width = 300;
+      const height = 400;
+      const screenwidth = window.screen.availWidth;
+      const screenheight = window.screen.availHeight;
+      const left = Math.floor(Math.random() * (screenwidth - width));
+      const top Math.floor(Math.random() * (screenheight - height));
+
       for (let i = 0; i < 5; i++) {
-        window.open(url, '_blank', 'width=600,height=400,top=100,left=100');
+        window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
       }
     };
   </script>
@@ -16,3 +23,4 @@
   <h1>Please Allow !</h1>
 </body>
 </html>
+
