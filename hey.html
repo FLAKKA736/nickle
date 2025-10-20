@@ -1,1 +1,32 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>67</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <script>
+    const colors = [
+      "#FF0000", // Red
+      "#00FF00", // Green
+      "#0000FF", // Blue
+      "#FFFF00", // Yellow
+      "#FF00FF", // Magenta
+      "#00FFFF", // Cyan
+      "#FFFFFF", // White
+      "#000000"  // Black
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[i];
+      i = (i + 1) % colors.length;
+    }, 25);
+  </script>
+</head>
+<body>
+</body>
+</html>
