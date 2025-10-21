@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>.</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="winow()">start</button>
+
+  <script>
+    function winow() {
+      const now = 10;
+      const br = 15;
+      const rs = 50;
+      const speed = 90;
+
+      for (let i = 0; i < now; i++) {
+        const popup = window.open('', '', 'width=200,height=150');
+
+
+        const radius = br + i * rs;
+        const initialAngle = i * (Math.PI / 5);
+
+        popup.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>.</title>
+            <style>
+              body {
+                margin: 0;
+                background: #fff;
+                font-family: sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                color: #333;
+              }
+            </style>
+          </head>
+          <body>
+            <script>
+              let angle = ${initialAngle};
+              const radius = ${radius};
+              const speed = ${speed};
+
+              const screenWidth = screen.availWidth;
+              const screenHeight = screen.availHeight;
+              const popupWidth = 300;
+              const popupHeight = 200;
+
+              const centerX = screenWidth / 2 - popupWidth / 2;
+              const centerY = screenHeight / 2 - popupHeight / 2;
+
+              function animate() {
+                angle += speed;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                window.moveTo(x, y);
+                requestAnimationFrame(animate);
+              }
+
+              animate();
+            <\/script>
+          </body>
+          </html>
+        `);
+      }
+    }
+  </script>
+</body>
+</html>
