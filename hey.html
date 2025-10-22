@@ -1,16 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>67</title>
+  <meta charset="UTF-8" />
+  <title>.</title>
   <style>
-    html, body {
+    body {
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="winow()">start</button>
+
+  <script>
+    function winow() {
+      const now = 12;
+      const br = 50;
+      const rs = 40;
+      const speed = -50;
+
+      for (let i = 0; i < now; i++) {
+        const popup = window.open('', '', 'width=100,height=100');
+
+
+        const radius = br + i * rs;
+        const initialAngle = i * (Math.PI / 5);
+
+        popup.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>.</title>
+            <style>
+              html, body {
       height: 100%;
       margin: 0;
       overflow: hidden;
     }
-  </style>
-  <script>
-    const colors = [
+            </style>
+          </head>
+          <body>
+            <script>
+const colors = [
       "#FF0000", // Red
       "#00FF00", // Green
       "#0000FF", // Blue
@@ -25,8 +62,33 @@
       document.body.style.backgroundColor = colors[i];
       i = (i + 1) % colors.length;
     }, 25);
+              let angle = ${initialAngle};
+              const radius = ${radius};
+              const speed = ${speed};
+
+              const screenWidth = screen.availWidth;
+              const screenHeight = screen.availHeight;
+              const popupWidth = 300;
+              const popupHeight = 200;
+
+              const centerX = screenWidth / 2 - popupWidth / 2;
+              const centerY = screenHeight / 2 - popupHeight / 2;
+
+              function animate() {
+                angle += speed;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                window.moveTo(x, y);
+                requestAnimationFrame(animate);
+              }
+
+              animate();
+            <\/script>
+          </body>
+          </html>
+        `);
+      }
+    }
   </script>
-</head>
-<body>
 </body>
 </html>
